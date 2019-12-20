@@ -9,7 +9,7 @@ public class UserWithEmails {
     String userName;
     Set<String> emails;
 
-    UserWithEmails(String textLine){
+    UserWithEmails(String textLine) {
         emails = new HashSet<>();
         parse(textLine);
     }
@@ -17,9 +17,9 @@ public class UserWithEmails {
     private void parse(String textLine) {
         String[] data = textLine.split("\\s*->\\s*");
         this.userName = data[0];
-        if(data[1].length()>0){
+        if (data[1].length() > 0) {
             String[] emails = data[1].split("\\s*,\\s*");
-            for(String e : emails ){
+            for (String e : emails) {
                 this.emails.add(e);
             }
         }
@@ -29,7 +29,7 @@ public class UserWithEmails {
     public String toString() {
         String text = userName + " -> ";
         String delim = "";
-        for(String e : emails){
+        for (String e : emails) {
             text += delim + e;
             delim = ", ";
         }

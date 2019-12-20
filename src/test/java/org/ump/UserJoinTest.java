@@ -37,14 +37,14 @@ public class UserJoinTest {
         String lastEmail = "";
         for (int i = 0; i < 100; i++) {
             StringBuilder emails = new StringBuilder();
-            emails.append("a"+i + " -> ");
+            emails.append("a" + i + " -> ");
             String delim = "";
             if (lastEmail != "") {
                 delim = ", ";
             }
             emails.append(lastEmail);
             for (int j = 0; j < 100; j++) {
-                String email = delim + i+"." +j + "@b123";
+                String email = delim + i + "." + j + "@b123";
                 delim = ", ";
                 emails.append(email);
                 lastEmail = email;
@@ -59,7 +59,7 @@ public class UserJoinTest {
         assertTrue(result.size() == 1);
         UserWithEmails c = (UserWithEmails) result.toArray()[0];
         assertEquals("a0", c.userName);
-        assertEquals("a0(10001)", c.userName+"("+c.emails.size()+")");
+        assertEquals("a0(10001)", c.userName + "(" + c.emails.size() + ")");
     }
 
     @Test
@@ -68,14 +68,14 @@ public class UserJoinTest {
         String lastEmail = "";
         for (int i = 0; i < 100000; i++) {
             StringBuilder emails = new StringBuilder();
-            emails.append("a"+i + " -> ");
+            emails.append("a" + i + " -> ");
             String delim = "";
             if (lastEmail != "") {
                 delim = ", ";
             }
             emails.append(lastEmail);
             for (int j = 0; j < 10; j++) {
-                String email = delim + i+"." +j + "@b";
+                String email = delim + i + "." + j + "@b";
                 delim = ", ";
                 emails.append(email);
                 lastEmail = email;
@@ -90,7 +90,7 @@ public class UserJoinTest {
         assertTrue(result.size() == 1);
         UserWithEmails c = (UserWithEmails) result.toArray()[0];
         assertEquals("a0", c.userName);
-        assertEquals("a0(1000001)", c.userName+"("+c.emails.size()+")");
+        assertEquals("a0(1000001)", c.userName + "(" + c.emails.size() + ")");
     }
 
 
@@ -100,18 +100,18 @@ public class UserJoinTest {
         String lastEmail = "";
         for (int i = 0; i < 100; i++) {
             StringBuilder emails = new StringBuilder();
-            emails.append("a"+i + " -> ");
+            emails.append("a" + i + " -> ");
             String delim = "";
-            if(i%10==0){
+            if (i % 10 == 0) {
                 if (lastEmail != "") {
                     delim = ", ";
                 }
-            }else{
+            } else {
                 lastEmail = "";
             }
             emails.append(lastEmail);
             for (int j = 0; j < 10000; j++) {
-                String email = delim + i+"." +j + "@b123";
+                String email = delim + i + "." + j + "@b123";
                 delim = ", ";
                 emails.append(email);
                 lastEmail = email;

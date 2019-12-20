@@ -21,7 +21,7 @@ public class UserJoin {
 
         // print to output
         clearer.clear(users).forEach(
-            System.out::println);
+                System.out::println);
 
     }
 }
