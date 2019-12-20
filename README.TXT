@@ -1,20 +1,23 @@
 Application to read data from STDIN and join users by emails
 
 Building process:
-1) load data in some folder "IntterraTest"
+2) Check git installed. "git version". If not install
 2) Check maven version: "mvn --version" (I used version 3.6.2)
 3) Check java version: "java --version" ( 1.8 and later)
-4) change dir to IntterraTest
-5) call "mvn package"
-6) jar file will be built in "target" folder: "userJoin-0.1.jar".
+4) load data in some folder i.e. "IntterraTest" (git clone https://github.com/jabbowsky/IntterraTest.git);
+5) change dir to IntterraTest
+6) call "mvn package"
+7) jar file will be built in "target" folder: "userJoin-0.1.jar"
 
 Application call:
 1) Call: "java -jar userJoin-0.1.jar"
-2) First at line you pass number of input rows:
+2) First at line you pass number of input rows
 3) Then pass all rows in format:
    "user -> email1, email2, email3"
+   "user2 -> email3, email5, email4"
+4) Result will be presented into output in the same format:
+  "user -> email1, email2, email3, email5, email4"
 
-Result will be presented into output in the same format
 
 Example:
 
