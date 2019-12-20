@@ -43,17 +43,20 @@ public class UsersJoiner {
             if (from.level > to.level) {
                 to.parent = from;
                 from.emails.addAll(to.emails);
+                to.emails = new HashSet<>();
                 topUsers.remove(to);
                 return from;
             } else if (to.level > from.level) {
                 from.parent = to;
                 to.emails.addAll(from.emails);
+                from.emails = new HashSet<>();
                 topUsers.remove(from);
                 return to;
             } else {
                 from.parent = to;
                 to.level++;
                 to.emails.addAll(from.emails);
+                from.emails = new HashSet<>();
                 topUsers.remove(from);
                 return to;
             }

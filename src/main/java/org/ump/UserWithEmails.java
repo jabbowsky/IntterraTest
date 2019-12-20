@@ -1,5 +1,6 @@
 package org.ump;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class UserWithEmails {
@@ -9,6 +10,7 @@ public class UserWithEmails {
     Set<String> emails;
 
     UserWithEmails(String textLine){
+        emails = new HashSet<>();
         parse(textLine);
     }
 
