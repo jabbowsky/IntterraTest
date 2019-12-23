@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 public class UserJoinTest {
 
     @Test
-    public void testTwoUsersJoin() throws IllegalArgumentException {
+    public void testTwoUsersJoin() throws Exception {
         List<UserWithEmails> users = new ArrayList<>();
         UserWithEmails a = new UserWithEmails("a -> a@b, b@c");
         UserWithEmails b = new UserWithEmails("b -> b@b, b@c");
@@ -32,7 +32,7 @@ public class UserJoinTest {
     }
 
     @Test
-    public void test100JoinWith100Email() throws IllegalArgumentException {
+    public void test100JoinWith100Email() throws Exception {
         List<UserWithEmails> users = new ArrayList<>();
         String lastEmail = "";
         for (int i = 0; i < 100; i++) {
@@ -63,7 +63,7 @@ public class UserJoinTest {
     }
 
     @Test
-    public void test100000JoinWith10Email() throws IllegalArgumentException {
+    public void test100000JoinWith10Email() throws Exception {
         List<UserWithEmails> users = new ArrayList<>();
         String lastEmail = "";
         for (int i = 0; i < 100000; i++) {
@@ -95,7 +95,7 @@ public class UserJoinTest {
 
 
     @Test
-    public void test100JoinWith10000Email() throws IllegalArgumentException {
+    public void test100JoinWith10000Email() throws Exception {
         List<UserWithEmails> users = new ArrayList<>();
         String lastEmail = "";
         for (int i = 0; i < 100; i++) {
@@ -128,7 +128,7 @@ public class UserJoinTest {
 
 
     @Test
-    public void testTripleUsersJoin() throws IllegalArgumentException {
+    public void testTripleUsersJoin() throws Exception {
         List<UserWithEmails> users = new ArrayList<>();
         UserWithEmails a = new UserWithEmails("a -> a@b, b@c");
         UserWithEmails b = new UserWithEmails("b -> b@b, b@c");

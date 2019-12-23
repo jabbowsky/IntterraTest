@@ -9,19 +9,21 @@ public class UserWithEmails {
     String userName;
     Set<String> emails;
 
-    UserWithEmails(String textLine) {
+    UserWithEmails(String textLine) throws Exception {
         emails = new HashSet<>();
         parse(textLine);
     }
 
-    private void parse(String textLine) {
+    private void parse(String textLine) throws Exception {
         String[] data = textLine.split("\\s*->\\s*");
         this.userName = data[0];
-        if (data[1].length() > 0) {
+        if (data.length > 1 && data[1].length() > 0) {
             String[] emails = data[1].split("\\s*,\\s*");
             for (String e : emails) {
                 this.emails.add(e);
             }
+        } else {
+            throw new FormatException();
         }
     }
 
@@ -34,5 +36,13 @@ public class UserWithEmails {
             delim = ", ";
         }
         return text;
+    }
+
+    class FormatException extends Exception {
+        @Override
+        public String toString() {
+            return "User & email format exception: " +
+                    "expected \"user -> email1, email2, email3\"";
+        }
     }
 }

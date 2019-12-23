@@ -11,25 +11,24 @@ Building process:
 
 Application call:
 1) Call: "java -jar userJoin-0.1.jar"
-2) First at line you pass number of input rows
-3) Then pass all rows in format:
+2) Then pass all rows in format:
    "user -> email1, email2, email3"
    "user2 -> email3, email5, email4"
+3) Then empty string as indicator of finish of output
 4) Result will be presented into output in the same format:
   "user -> email1, email2, email3, email5, email4"
+5) if for will be passed without email Exception will be thrown. And this line will be ignored. But rest of lines will be processed
 
 
 Example:
 
 \> java -jar userJoin-0.1.jar
-5
-5 cases to enter:
 user1 -> xxx@ya.ru, foo@gmail.com, lol@mail.ru
 user2 -> foo@gmail.com, ups@pisem.net
 user3 -> xyz@pisem.net, vasya@pupkin.com
 user4 -> ups@pisem.net, aaa@bbb.ru
 user5 -> xyz@pisem.net
-Output
+
 user3 -> vasya@pupkin.com, xyz@pisem.net
 user1 -> aaa@bbb.ru, ups@pisem.net, lol@mail.ru, xxx@ya.ru, foo@gmail.com
 
